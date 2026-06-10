@@ -1,0 +1,72 @@
+[
+{
+  "login": "admin",
+  "password": "admin"
+},
+{
+    "model": "tracker_app.task",
+    "pk": 1,
+    "fields": {
+        "summary": "To make all complete",
+        "description": null,
+        "status": 1,
+        "type": 1,
+        "created_at": "2026-06-10T20:38:08Z",
+        "updated_at": "2026-06-10T20:38:12Z"
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 2,
+    "fields": {
+        "summary": "Attractor h/w to finish",
+        "description": "lesson_57 homework have to finish",
+        "status": 1,
+        "type": 1,
+        "created_at": "2026-06-10T14:46:06.428Z",
+        "updated_at": "2026-06-10T14:46:06.428Z"
+    }
+},
+{
+    "model": "tracker_app.status",
+    "pk": 1,
+    "fields": {
+        "title": "New"
+    }
+},
+{
+    "model": "tracker_app.status",
+    "pk": 2,
+    "fields": {
+        "title": "In progress"
+    }
+},
+{
+    "model": "tracker_app.status",
+    "pk": 3,
+    "fields": {
+        "title": "Done"
+    }
+},
+{
+    "model": "tracker_app.type",
+    "pk": 1,
+    "fields": {
+        "title": "Task"
+    }
+},
+{
+    "model": "tracker_app.type",
+    "pk": 2,
+    "fields": {
+        "title": "Bug"
+    }
+},
+{
+    "model": "tracker_app.type",
+    "pk": 3,
+    "fields": {
+        "title": "Enhancement"
+    }
+}
+]
