@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from tracker_app.views import MainView, DetailTaskView, CreateTaskView, UpdateTaskView, DeleteTaskView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', MainView.as_view(), name='main'),
+    path('task/<int:pk>/detail/', DetailTaskView.as_view(), name='detail'),
+    path('task/create/', CreateTaskView.as_view(), name='create_task'),
+    path('task/<int:pk>/update/', UpdateTaskView.as_view(), name='update_task'),
+    path('task/<int:pk>/delete/', DeleteTaskView.as_view(), name='delete_task'),
 ]
