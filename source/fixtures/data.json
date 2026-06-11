@@ -1,9 +1,5 @@
 [
 {
-    "login": "admin",
-    "password": "admin"
-},
-{
     "model": "tracker_app.type",
     "pk": 1,
     "fields": {
