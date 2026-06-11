@@ -1,52 +1,7 @@
 [
 {
-  "login": "admin",
-  "password": "admin"
-},
-{
-    "model": "tracker_app.task",
-    "pk": 1,
-    "fields": {
-        "summary": "To make all complete",
-        "description": null,
-        "status": 1,
-        "type": 1,
-        "created_at": "2026-06-10T20:38:08Z",
-        "updated_at": "2026-06-10T20:38:12Z"
-    }
-},
-{
-    "model": "tracker_app.task",
-    "pk": 2,
-    "fields": {
-        "summary": "Attractor h/w to finish",
-        "description": "lesson_57 homework have to finish",
-        "status": 1,
-        "type": 1,
-        "created_at": "2026-06-10T14:46:06.428Z",
-        "updated_at": "2026-06-10T14:46:06.428Z"
-    }
-},
-{
-    "model": "tracker_app.status",
-    "pk": 1,
-    "fields": {
-        "title": "New"
-    }
-},
-{
-    "model": "tracker_app.status",
-    "pk": 2,
-    "fields": {
-        "title": "In progress"
-    }
-},
-{
-    "model": "tracker_app.status",
-    "pk": 3,
-    "fields": {
-        "title": "Done"
-    }
+    "login": "admin",
+    "password": "admin"
 },
 {
     "model": "tracker_app.type",
@@ -67,6 +22,112 @@
     "pk": 3,
     "fields": {
         "title": "Enhancement"
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 1,
+    "fields": {
+        "summary": "To make all complete",
+        "description": "nothing",
+        "status": 1,
+        "created_at": "2026-06-11T17:01:18Z",
+        "updated_at": "2026-06-11T17:01:22Z",
+        "type": []
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 2,
+    "fields": {
+        "summary": "qwert",
+        "description": "qwert",
+        "status": 1,
+        "created_at": "2026-06-11T11:08:17.622Z",
+        "updated_at": "2026-06-11T11:20:05.046Z",
+        "type": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 3,
+    "fields": {
+        "summary": "qwert",
+        "description": "qwert",
+        "status": 1,
+        "created_at": "2026-06-11T11:09:20.153Z",
+        "updated_at": "2026-06-11T11:09:20.153Z",
+        "type": [
+            1,
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 4,
+    "fields": {
+        "summary": "Play football tomorrow",
+        "description": "with high school friends",
+        "status": 1,
+        "created_at": "2026-06-11T11:29:20.104Z",
+        "updated_at": "2026-06-11T11:29:20.104Z",
+        "type": [
+            1
+        ]
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 5,
+    "fields": {
+        "summary": "To fix button \"for more\"",
+        "description": "when you click 50.000 times it gives 404 error",
+        "status": 1,
+        "created_at": "2026-06-11T11:30:19.704Z",
+        "updated_at": "2026-06-11T11:30:19.705Z",
+        "type": [
+            2
+        ]
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 6,
+    "fields": {
+        "summary": "started projects mini Amazon",
+        "description": "at least to make something",
+        "status": 1,
+        "created_at": "2026-06-11T11:31:05.248Z",
+        "updated_at": "2026-06-11T11:31:05.248Z",
+        "type": [
+            3
+        ]
+    }
+},
+{
+    "model": "tracker_app.status",
+    "pk": 1,
+    "fields": {
+        "title": "New"
+    }
+},
+{
+    "model": "tracker_app.status",
+    "pk": 2,
+    "fields": {
+        "title": "In Progress"
+    }
+},
+{
+    "model": "tracker_app.status",
+    "pk": 3,
+    "fields": {
+        "title": "Done"
     }
 }
 ]
