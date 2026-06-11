@@ -1,27 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="card text-center">
-    <div class="card-body">
-        <h3>Описание задачи</h3>
-    </div>
-</div>
-<div class="container">
-    <div class="card my-5">
-        <div class="card-header fs-4 text-center">{{ task.summary }}</div>
+    <div class="card text-center">
         <div class="card-body">
-            <figure>
-                <blockquote class="blockquote">
-                    <p>Описание:</p>
-                    <p>{{ task.description }}</p>
-                </blockquote>
-                <figcaption class="blockquote-footer mt-3">
-                    <p>Status: {{ task.status }}</p>
-                    <p>Type: {{ task.type }}</p>
-                </figcaption>
-            </figure>
+            <h3>Описание задачи</h3>
         </div>
     </div>
-</div>
+    <div class="container">
+        <div class="card my-5">
+            <div class="card-header fs-4 text-center">{{ task.summary }}</div>
+            <div class="card-body">
+                <figure>
+                    <blockquote class="blockquote">
+                        <p>Описание:</p>
+                        <p>{{ task.description }}</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer mt-3">
+                        <p>Status: {{ task.status }}</p>
+                        {% for t in task.type.all %}
+                            <p>Type: {{ t }}</p>
+                        {% empty %}
+                            <span class="text-muted">No types</span>
+                        {% endfor %}
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
