@@ -1,4 +1,15 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+
+
+def validate_starts_with_letter(value):
+    if value and not value[0].isalpha():
+        raise ValidationError('Название задачи должно начинаться с буквы.')
+
+
+def validate_min_two_words(value):
+    if value and len(value.split()) < 2:
+        raise ValidationError('Описание должно содержать минимум два слова.')
 
 
 class Type(models.Model):
@@ -12,8 +23,17 @@ class Type(models.Model):
 
 
 class Task(models.Model):
-    summary = models.CharField(null=False, blank=False, max_length=100)
-    description = models.TextField(null=True, blank=True)
+    summary = models.CharField(
+        null=False,
+        blank=False,
+        max_length=100,
+        validators=[validate_starts_with_letter],
+    )
+    description = models.TextField(
+        null=True,
+        blank=True,
+        validators=[validate_min_two_words],
+    )
     status = models.ForeignKey('Status', on_delete=models.RESTRICT, related_name='tasks')
     type = models.ManyToManyField(Type, related_name='tasks')
     created_at = models.DateTimeField(auto_now_add=True)

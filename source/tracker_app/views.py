@@ -66,3 +66,6 @@ class DeleteTaskView(View):
         task = get_object_or_404(Task, pk=self.kwargs['pk'])
         task.delete()
         return redirect('main')
+
+
+
