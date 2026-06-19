@@ -34,7 +34,7 @@ class Task(models.Model):
         blank=True,
         validators=[validate_min_two_words],
     )
-    status = models.ForeignKey('Status', on_delete=models.RESTRICT, related_name='tasks')
+    status = models.ForeignKey('Status', on_delete=models.RESTRICT, related_name='tasks', default=1)
     type = models.ManyToManyField(Type, related_name='tasks')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
