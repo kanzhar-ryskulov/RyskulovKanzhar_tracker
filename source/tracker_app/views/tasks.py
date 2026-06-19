@@ -1,17 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, ListView
 
 from tracker_app.models import Task
 from tracker_app.forms import TaskForm
 
 
-class MainView(TemplateView):
+class MainView(ListView):
     template_name = 'task/main_page.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['task'] = Task.objects.all()
-        return context
+    context_object_name = 'task'
+    model = Task
 
 
 class DetailTaskView(TemplateView):
@@ -66,6 +63,5 @@ class DeleteTaskView(View):
         task = get_object_or_404(Task, pk=self.kwargs['pk'])
         task.delete()
         return redirect('main')
-
 
 

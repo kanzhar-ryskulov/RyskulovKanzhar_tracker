@@ -38,6 +38,7 @@ class Task(models.Model):
     type = models.ManyToManyField(Type, related_name='tasks')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    project = models.ForeignKey('Project', on_delete=models.RESTRICT, related_name='tasks')
 
     class Meta:
         db_table = 'task'
@@ -55,3 +56,15 @@ class Status(models.Model):
 
     class Meta:
         db_table = 'status'
+
+class Project(models.Model):
+    start_date = models.DateField(null=False, blank=False)
+    end_date = models.DateField(null=True, blank=True)
+    title = models.CharField(null=False, blank=False, max_length=100)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        db_table = 'project'
