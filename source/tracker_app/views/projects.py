@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.http import urlencode
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 
 from tracker_app.forms import SearchForm, ProjectForm
 from tracker_app.models import Project
@@ -61,4 +61,15 @@ class CreateProjectView(CreateView):
     template_name = 'project/create_project.html'
     model = Project
     form_class = ProjectForm
+    success_url = reverse_lazy('list_project')
+
+class UpdateProjectView(UpdateView):
+    template_name = 'project/update_project.html'
+    model = Project
+    form_class = ProjectForm
+    success_url = reverse_lazy('list_project')
+
+class DeleteProjectView(DeleteView):
+    template_name = 'project/delete_project.html'
+    model = Project
     success_url = reverse_lazy('list_project')
