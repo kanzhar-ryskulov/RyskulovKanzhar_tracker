@@ -36,6 +36,7 @@
         "status": 1,
         "created_at": "2026-06-01T08:00:00Z",
         "updated_at": "2026-06-01T09:00:00Z",
+        "project": 1,
         "type": [
             1
         ]
@@ -50,6 +51,7 @@
         "status": 1,
         "created_at": "2026-06-02T08:00:00Z",
         "updated_at": "2026-06-02T10:00:00Z",
+        "project": 1,
         "type": [
             2
         ]
@@ -64,6 +66,7 @@
         "status": 2,
         "created_at": "2026-06-03T08:00:00Z",
         "updated_at": "2026-06-03T11:00:00Z",
+        "project": 2,
         "type": [
             4
         ]
@@ -78,6 +81,7 @@
         "status": 2,
         "created_at": "2026-06-04T08:00:00Z",
         "updated_at": "2026-06-04T12:00:00Z",
+        "project": 1,
         "type": [
             1,
             3
@@ -93,6 +97,7 @@
         "status": 3,
         "created_at": "2026-05-20T08:00:00Z",
         "updated_at": "2026-06-05T13:00:00Z",
+        "project": 1,
         "type": [
             2
         ]
@@ -107,6 +112,7 @@
         "status": 3,
         "created_at": "2026-05-21T08:00:00Z",
         "updated_at": "2026-06-06T14:00:00Z",
+        "project": 2,
         "type": [
             1
         ]
@@ -121,6 +127,7 @@
         "status": 2,
         "created_at": "2026-06-07T08:00:00Z",
         "updated_at": "2026-06-07T15:00:00Z",
+        "project": 1,
         "type": [
             1
         ]
@@ -135,6 +142,7 @@
         "status": 1,
         "created_at": "2026-06-08T08:00:00Z",
         "updated_at": "2026-06-08T16:00:00Z",
+        "project": 3,
         "type": [
             3
         ]
@@ -149,6 +157,7 @@
         "status": 3,
         "created_at": "2026-04-01T08:00:00Z",
         "updated_at": "2026-04-20T16:00:00Z",
+        "project": 1,
         "type": [
             2
         ]
@@ -163,6 +172,7 @@
         "status": 2,
         "created_at": "2026-06-09T08:00:00Z",
         "updated_at": "2026-06-09T17:00:00Z",
+        "project": 3,
         "type": [
             1,
             3
@@ -178,6 +188,7 @@
         "status": 1,
         "created_at": "2026-06-10T08:00:00Z",
         "updated_at": "2026-06-10T18:00:00Z",
+        "project": 1,
         "type": [
             2
         ]
@@ -192,6 +203,7 @@
         "status": 3,
         "created_at": "2026-05-28T08:00:00Z",
         "updated_at": "2026-06-11T09:30:00Z",
+        "project": 1,
         "type": [
             3
         ]
@@ -206,6 +218,7 @@
         "status": 1,
         "created_at": "2026-06-11T10:00:00Z",
         "updated_at": "2026-06-11T10:30:00Z",
+        "project": 2,
         "type": [
             4
         ]
@@ -220,6 +233,7 @@
         "status": 3,
         "created_at": "2026-05-25T08:00:00Z",
         "updated_at": "2026-06-12T11:00:00Z",
+        "project": 1,
         "type": [
             1
         ]
@@ -234,6 +248,7 @@
         "status": 2,
         "created_at": "2026-06-12T12:00:00Z",
         "updated_at": "2026-06-12T12:30:00Z",
+        "project": 1,
         "type": [
             2,
             3
@@ -249,6 +264,7 @@
         "status": 1,
         "created_at": "2026-06-13T08:00:00Z",
         "updated_at": "2026-06-13T09:00:00Z",
+        "project": 1,
         "type": [
             3
         ]
@@ -263,6 +279,7 @@
         "status": 3,
         "created_at": "2026-06-13T10:00:00Z",
         "updated_at": "2026-06-13T11:00:00Z",
+        "project": 1,
         "type": [
             1,
             4
@@ -278,8 +295,55 @@
         "status": 3,
         "created_at": "2026-06-13T12:00:00Z",
         "updated_at": "2026-06-13T13:00:00Z",
+        "project": 2,
         "type": [
             2
+        ]
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 19,
+    "fields": {
+        "summary": "Удалить все не нужные параметры",
+        "description": "Для очистки рабочего стола",
+        "status": 1,
+        "created_at": "2026-06-18T17:14:21.387Z",
+        "updated_at": "2026-06-19T17:40:44.913Z",
+        "project": 3,
+        "type": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 22,
+    "fields": {
+        "summary": "Moderate all views from normal to generic",
+        "description": "for example :\r\nView -> CreateView\r\nView --> UpdateView\r\nView --> DetailView",
+        "status": 1,
+        "created_at": "2026-06-19T19:30:20.883Z",
+        "updated_at": "2026-06-19T19:51:48.262Z",
+        "project": 1,
+        "type": [
+            1
+        ]
+    }
+},
+{
+    "model": "tracker_app.task",
+    "pk": 24,
+    "fields": {
+        "summary": "Надаело создавать задачи",
+        "description": "да да не шутка",
+        "status": 1,
+        "created_at": "2026-06-20T11:56:11.029Z",
+        "updated_at": "2026-06-20T11:56:11.029Z",
+        "project": 1,
+        "type": [
+            3
         ]
     }
 },
@@ -302,6 +366,534 @@
     "pk": 3,
     "fields": {
         "title": "Закрыта"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 1,
+    "fields": {
+        "start_date": "2026-01-01",
+        "end_date": "2027-01-03",
+        "title": "Softime corporation",
+        "description": "its new generations manager for all kind of time manages"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 2,
+    "fields": {
+        "start_date": "2026-01-01",
+        "end_date": null,
+        "title": "Kibersico CO",
+        "description": "global intresting project based on true stories of people"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 3,
+    "fields": {
+        "start_date": "2026-01-01",
+        "end_date": "2026-02-15",
+        "title": "Science-cryptocurrency",
+        "description": "dollar ancector brother in law"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 5,
+    "fields": {
+        "start_date": "2026-01-30",
+        "end_date": "2026-02-15",
+        "title": "Новый проект 5",
+        "description": "оивыгфшмзаигфшмавг мавифошмззваыфгшфхм"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 6,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 6",
+        "description": "very sunny"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 7,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 7",
+        "description": "very exited"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 8,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 8",
+        "description": "amazing"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 9,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 9",
+        "description": "описание 9"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 10,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 10",
+        "description": "описание 10"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 11,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 11",
+        "description": "описание 11"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 12,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 12",
+        "description": "описание 12"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 13,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 13",
+        "description": "описание 13"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 14,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 14",
+        "description": "описание 14"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 15,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 15",
+        "description": "описание 15"
+    }
+},
+{
+    "model": "tracker_app.project",
+    "pk": 16,
+    "fields": {
+        "start_date": null,
+        "end_date": null,
+        "title": "Проект 16",
+        "description": "описание 16"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 3,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 3,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 3,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 3,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 2,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 2,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 2,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 2,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add status",
+        "content_type": 7,
+        "codename": "add_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change status",
+        "content_type": 7,
+        "codename": "change_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete status",
+        "content_type": 7,
+        "codename": "delete_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view status",
+        "content_type": 7,
+        "codename": "view_status"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add type",
+        "content_type": 9,
+        "codename": "add_type"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change type",
+        "content_type": 9,
+        "codename": "change_type"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete type",
+        "content_type": 9,
+        "codename": "delete_type"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view type",
+        "content_type": 9,
+        "codename": "view_type"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add task",
+        "content_type": 8,
+        "codename": "add_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change task",
+        "content_type": 8,
+        "codename": "change_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete task",
+        "content_type": 8,
+        "codename": "delete_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view task",
+        "content_type": 8,
+        "codename": "view_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add project",
+        "content_type": 10,
+        "codename": "add_project"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change project",
+        "content_type": 10,
+        "codename": "change_project"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete project",
+        "content_type": 10,
+        "codename": "delete_project"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view project",
+        "content_type": 10,
+        "codename": "view_project"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$z5freAI1dTQvhBytEN4X9z$z0JTQyg8sb9gd4hk+TubqVQfGi19LlL0Db+ud02q//k=",
+        "last_login": "2026-06-20T12:25:43.391Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-06-18T08:58:57.638Z",
+        "groups": [],
+        "user_permissions": []
     }
 }
 ]
