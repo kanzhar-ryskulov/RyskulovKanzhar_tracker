@@ -1,3 +1,3 @@
 
-from .tasks import MainView, DetailTaskView, CreateTaskView, UpdateTaskView, DeleteTaskView
+from .tasks import DetailTaskView, CreateTaskView, UpdateTaskView, DeleteTaskView
 

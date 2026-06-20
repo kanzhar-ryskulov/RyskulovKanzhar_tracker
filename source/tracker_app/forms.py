@@ -5,7 +5,7 @@ from tracker_app.models import Task, Type, Status, Project
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ('summary', 'description', 'type', 'project')
+        fields = ('summary', 'description', 'type',)
         widgets = {
             'summary': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
@@ -27,3 +27,12 @@ class StatusForm(forms.ModelForm):
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label='')
 
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+
+        fields = '__all__'
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+        }
