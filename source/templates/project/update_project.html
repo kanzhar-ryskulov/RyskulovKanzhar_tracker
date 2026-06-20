@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="card my-5">
+            <h1>Изменение проекта</h1>
+            <div class="card-body">
+                {% include 'partial/project_form.html' %}
+            </div>
+            <div class="card-footer text-end py-3">
+                <button type="submit" form="project_form" class="btn btn-sm btn-primary">Сохранить</button>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
