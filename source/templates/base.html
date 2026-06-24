@@ -37,6 +37,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url "create_project" %}">Новый проект</a>
                 </li>
+                <li class="nav-item">
+                    {% if user.is_authenticated %}
+                        {% block menu_links %}{% endblock %}
+                        <li class="menu-right"><a href="{% url 'logout' %}" class="nav-link">Выход</a></li>
+                        <li class="menu-right text-white mt-2 ms-2">Привет, {{ user.username }}!</li>
+                    {% else %}
+                        <li class="menu-right"><a href="{% url 'login' %}" class="nav-link">Вход</a></li>
+                    {% endif %}
+                </li>
 
             </ul>
         </div>

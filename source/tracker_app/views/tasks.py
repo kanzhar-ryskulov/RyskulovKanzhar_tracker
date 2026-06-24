@@ -1,4 +1,5 @@
-from django.shortcuts import get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
@@ -12,10 +13,12 @@ class DetailTaskView(DetailView):
     model = Task
 
 
-class CreateTaskView(CreateView):
+class CreateTaskView(LoginRequiredMixin,CreateView):
     template_name = "task/add_task.html"
     form_class = TaskForm
     success_url = reverse_lazy('list_project')
+
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -34,8 +37,20 @@ class UpdateTaskView(UpdateView):
     form_class = TaskForm
     success_url = reverse_lazy('main')
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')
+
+        return super().dispatch(request, *args, **kwargs)
+
 
 class DeleteTaskView(DeleteView):
     template_name = 'task/delete_task.html'
     model = Task
     success_url = reverse_lazy('main')
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')
+
+        return super().dispatch(request, *args, **kwargs)

@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.utils.http import urlencode
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
@@ -63,13 +63,31 @@ class CreateProjectView(CreateView):
     form_class = ProjectForm
     success_url = reverse_lazy('list_project')
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')
+
+        return super().dispatch(request, *args, **kwargs)
+
 class UpdateProjectView(UpdateView):
     template_name = 'project/update_project.html'
     model = Project
     form_class = ProjectForm
     success_url = reverse_lazy('list_project')
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')
+
+        return super().dispatch(request, *args, **kwargs)
+
 class DeleteProjectView(DeleteView):
     template_name = 'project/delete_project.html'
     model = Project
     success_url = reverse_lazy('list_project')
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')
+
+        return super().dispatch(request, *args, **kwargs)
