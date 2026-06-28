@@ -1,0 +1,20 @@
+
+{% load django_bootstrap5 %}
+
+<div class="card my-5 {{ extra_classes }}">
+    <div class="card-header fs-4 text-center py-3">{{ form_title }}</div>
+    <div class="card-body">
+        <form action="" id="main-form" method="POST">
+            {% csrf_token %}
+
+            {% if next %}
+                <input type="hidden" name="next" value="{{ next }}">
+            {% endif %}
+
+            {% bootstrap_form form layout="floating" %}
+        </form>
+    </div>
+    <div class="card-footer text-end py-3">
+        <button type="submit" form="main-form" class="btn btn-sm btn-primary">{{ btn_txt }}</button>
+    </div>
+</div>

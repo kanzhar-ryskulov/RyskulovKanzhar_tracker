@@ -16,7 +16,7 @@
                         <p>{{ task.description|linebreaks }}</p>
                     </blockquote>
                     <figcaption class="blockquote-footer mt-3">
-                        <p>Status: {{ task.status }}</p>
+                        <p >Status: {{ task.status }}</p>
                         {% for t in task.type.all %}
                             <p>Type: {{ t }}</p>
                         {% empty %}

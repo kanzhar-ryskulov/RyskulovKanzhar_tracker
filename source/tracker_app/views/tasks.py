@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from tracker_app.models import Task, Project
@@ -13,12 +13,14 @@ class DetailTaskView(DetailView):
     model = Task
 
 
-class CreateTaskView(LoginRequiredMixin,CreateView):
+class CreateTaskView(LoginRequiredMixin, CreateView):
     template_name = "task/add_task.html"
     form_class = TaskForm
-    success_url = reverse_lazy('list_project')
+    success_url = reverse_lazy('detail_project')
 
-
+    def get_success_url(self):
+        project_detail = get_object_or_404(Project, pk=self.kwargs["pk"])
+        return reverse('detail_project', kwargs={'pk': project_detail.pk})
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -31,26 +33,19 @@ class CreateTaskView(LoginRequiredMixin,CreateView):
         return super().form_valid(form)
 
 
-class UpdateTaskView(UpdateView):
+class UpdateTaskView(LoginRequiredMixin,UpdateView):
     model = Task
     template_name = 'task/update_task.html'
     form_class = TaskForm
-    success_url = reverse_lazy('main')
 
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            return redirect('login')
-
-        return super().dispatch(request, *args, **kwargs)
+    def get_success_url(self):
+        return reverse('detail_project', kwargs={'pk': self.object.project.pk})
 
 
-class DeleteTaskView(DeleteView):
+class DeleteTaskView(LoginRequiredMixin,DeleteView):
     template_name = 'task/delete_task.html'
     model = Task
-    success_url = reverse_lazy('main')
+    success_url = reverse_lazy('list_project')
 
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            return redirect('login')
-
-        return super().dispatch(request, *args, **kwargs)
+    def get_success_url(self):
+        return reverse('detail_project', kwargs={'pk': self.object.project.pk})

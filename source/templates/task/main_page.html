@@ -11,6 +11,7 @@
         </form>
     </div>
 
+
     <div class="row row-cols-1 row-cols-md-2 g-4 shadow py-5">
         {% for t in task %}
             <div class="col">
@@ -19,6 +20,7 @@
 
                         <div class="d-flex justify-content-between align-items-start">
                             <h5 class="card-title">{{ t.summary }}</h5>
+
 
                             <div class="d-flex gap-2 flex-nowrap ms-2">
                                 <a class="btn btn-warning btn-sm text-nowrap" href="{% url 'update_task' t.id %}">Update</a>
