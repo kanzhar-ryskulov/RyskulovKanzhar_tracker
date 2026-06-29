@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.core.exceptions import ValidationError
 
@@ -62,6 +63,7 @@ class Project(models.Model):
     end_date = models.DateField(null=True, blank=True)
     title = models.CharField(null=False, blank=False, max_length=100)
     description = models.TextField(null=True, blank=True)
+    user = models.ManyToManyField(get_user_model(), related_name='projects', blank=True)
 
     def __str__(self):
         return self.title

@@ -1,15 +1,17 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.db.models import Q
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404, render
 from django.urls import reverse_lazy
 from django.utils.http import urlencode
+from django.views import View
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 
 from tracker_app.forms import SearchForm, ProjectForm
 from tracker_app.models import Project
 
-
+User = get_user_model()
 class ProjectListView(ListView):
     template_name = 'project/project_list.html'
     model = Project
@@ -56,7 +58,9 @@ class DetailProjectView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tasks'] = self.object.tasks.all()
+        context['all_users'] = User.objects.exclude(id__in=self.object.user.all())
         return context
+
 
 
 class CreateProjectView(LoginRequiredMixin,CreateView):
@@ -65,6 +69,17 @@ class CreateProjectView(LoginRequiredMixin,CreateView):
     form_class = ProjectForm
     success_url = reverse_lazy('list_project')
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.groups.filter(name='Project Manager').exists():
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
+
+
+    def form_valid(self, form):
+        project = form.save()
+        project.user.add(self.request.user)
+        return redirect('list_project')
 
 class UpdateProjectView(LoginRequiredMixin,UpdateView):
     template_name = 'project/update_project.html'
@@ -72,10 +87,79 @@ class UpdateProjectView(LoginRequiredMixin,UpdateView):
     form_class = ProjectForm
     success_url = reverse_lazy('list_project')
 
+    def dispatch(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, pk=kwargs['pk'])
+        if not request.user.groups.filter(name='Project Manager').exists():
+            raise PermissionDenied
+        if not project.user.filter(pk=request.user.pk).exists():
+            raise PermissionDenied
+
+        return super().dispatch(request, *args, **kwargs)
+
 
 
 class DeleteProjectView(LoginRequiredMixin,DeleteView):
     template_name = 'project/delete_project.html'
     model = Project
     success_url = reverse_lazy('list_project')
+
+    def dispatch(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, pk=kwargs['pk'])
+        if not request.user.groups.filter(name='Project Manager').exists():
+            raise PermissionDenied
+        if not project.user.filter(pk=request.user.pk).exists():
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
+class ProjectUserManageView(LoginRequiredMixin,DetailView):
+    template_name = 'project/add_user.html'
+    model = Project
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tasks'] = self.object.tasks.all()
+        context['all_users'] = User.objects.exclude(id__in=self.object.user.all())
+        return context
+
+    def dispatch(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, pk=kwargs['pk'])
+        if not request.user.groups.filter(name__in=['Project Manager', 'Team Lead']).exists():
+            raise PermissionDenied
+        if not project.user.filter(pk=request.user.pk).exists():
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
+
+class ProjectUserAddView(LoginRequiredMixin, View):
+    def dispatch(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, pk=kwargs['pk'])
+        if not request.user.groups.filter(name__in=['Project Manager', 'Team Lead']).exists():
+            raise PermissionDenied
+        if not project.user.filter(pk=request.user.pk).exists():
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, pk=kwargs["pk"])
+        user = get_object_or_404(User, pk=request.POST["user_id"])
+        project.user.add(user)
+
+        return redirect("detail_project", pk=project.pk)
+
+
+class RemoveUserFromProjectView(View):
+    def dispatch(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, pk=kwargs['pk'])
+        if not request.user.groups.filter(name__in=['Project Manager', 'Team Lead']).exists():
+            raise PermissionDenied
+        if not project.user.filter(pk=request.user.pk).exists():
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, pk, user_id):
+        project = get_object_or_404(Project, pk=pk)
+        user = get_object_or_404(User, id=user_id)
+
+        project.user.remove(user)
+        return redirect('detail_project', pk=pk)
 

@@ -31,7 +31,7 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
 
-        fields = '__all__'
+        fields = ('start_date', 'end_date','title', 'description', )
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),

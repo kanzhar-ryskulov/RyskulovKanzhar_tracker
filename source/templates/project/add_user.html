@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-center mt-5">
+    <div class="w-50">
+
+        <h3 class="text-center mb-4">Участники проекта</h3>
+
+        <ul class="list-group mb-5">
+            {% for user in project.user.all %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>{{ user.username }}</span>
+
+                    <form action="{% url 'remove_user' project.pk user.id %}" method="post" class="m-0">
+                        {% csrf_token %}
+                        <button class="btn btn-danger btn-sm" type="submit">
+                            Удалить
+                        </button>
+                    </form>
+                </li>
+            {% empty %}
+                <li class="list-group-item text-center">
+                    В проекте еще нет участников.
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3 class="text-center mb-3">Добавить участника</h3>
+
+        <form action="{% url 'user_add_project' project.pk %}" method="POST" class="d-flex gap-2 justify-content-center">
+            {% csrf_token %}
+
+            <select name="user_id" class="form-select w-50">
+                {% for user in all_users %}
+                    <option value="{{ user.id }}">{{ user.username }}</option>
+                {% endfor %}
+            </select>
+
+            <button class="btn btn-primary" type="submit">
+                Добавить
+            </button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
