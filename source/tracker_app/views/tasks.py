@@ -3,6 +3,7 @@ from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from tracker_app.mixins import ManagerOrLeadRequiredMixin, InProjectMixin
 
 from tracker_app.models import Task, Project
 from tracker_app.forms import TaskForm
@@ -55,15 +56,13 @@ class UpdateTaskView(LoginRequiredMixin,UpdateView):
         return reverse('detail_project', kwargs={'pk': self.object.project.pk})
 
 
-class DeleteTaskView(LoginRequiredMixin,DeleteView):
+class DeleteTaskView(LoginRequiredMixin,ManagerOrLeadRequiredMixin, DeleteView):
     template_name = 'task/delete_task.html'
     model = Task
     success_url = reverse_lazy('list_project')
 
     def dispatch(self, request, *args, **kwargs):
         task = get_object_or_404(Task, pk=kwargs['pk'])
-        if not request.user.groups.filter(name__in=['Project Manager', 'Team Lead']).exists():
-            raise PermissionDenied
         if not task.project.user.filter(pk=request.user.pk).exists():
             raise PermissionDenied
         return super().dispatch(request, *args, **kwargs)
