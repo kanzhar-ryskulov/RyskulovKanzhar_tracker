@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
@@ -13,6 +12,8 @@ from tracker_app.mixins import ManagerOrLeadRequiredMixin, ManagerRequiredMixin,
 from tracker_app.models import Project
 
 User = get_user_model()
+
+
 class ProjectListView(ListView):
     template_name = 'project/project_list.html'
     model = Project
@@ -63,30 +64,30 @@ class DetailProjectView(DetailView):
         return context
 
 
-
-class CreateProjectView(LoginRequiredMixin, ManagerRequiredMixin,CreateView):
+class CreateProjectView(LoginRequiredMixin, ManagerRequiredMixin, CreateView):
     template_name = 'project/create_project.html'
     model = Project
     form_class = ProjectForm
     success_url = reverse_lazy('list_project')
-
 
     def form_valid(self, form):
         project = form.save()
         project.user.add(self.request.user)
         return redirect('list_project')
 
-class UpdateProjectView(LoginRequiredMixin, ManagerRequiredMixin , InProjectMixin, UpdateView):
+
+class UpdateProjectView(LoginRequiredMixin, ManagerRequiredMixin, InProjectMixin, UpdateView):
     template_name = 'project/update_project.html'
     model = Project
     form_class = ProjectForm
     success_url = reverse_lazy('list_project')
 
 
-class DeleteProjectView(LoginRequiredMixin, ManagerRequiredMixin, InProjectMixin , DeleteView):
+class DeleteProjectView(LoginRequiredMixin, ManagerRequiredMixin, InProjectMixin, DeleteView):
     template_name = 'project/delete_project.html'
     model = Project
     success_url = reverse_lazy('list_project')
+
 
 class ProjectUserManageView(LoginRequiredMixin, ManagerOrLeadRequiredMixin, InProjectMixin, DetailView):
     template_name = 'project/add_user.html'
@@ -109,7 +110,7 @@ class ProjectUserAddView(LoginRequiredMixin, ManagerOrLeadRequiredMixin, InProje
         return redirect("detail_project", pk=project.pk)
 
 
-class RemoveUserFromProjectView(LoginRequiredMixin, ManagerOrLeadRequiredMixin, InProjectMixin,View):
+class RemoveUserFromProjectView(LoginRequiredMixin, ManagerOrLeadRequiredMixin, InProjectMixin, View):
 
     def post(self, request, pk, user_id):
         project = get_object_or_404(Project, pk=pk)
@@ -117,4 +118,3 @@ class RemoveUserFromProjectView(LoginRequiredMixin, ManagerOrLeadRequiredMixin, 
 
         project.user.remove(user)
         return redirect('detail_project', pk=pk)
-

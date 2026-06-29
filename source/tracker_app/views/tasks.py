@@ -1,9 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
-from tracker_app.mixins import ManagerOrLeadRequiredMixin, InProjectMixin
+from tracker_app.mixins import ManagerOrLeadRequiredMixin
 
 from tracker_app.models import Task, Project
 from tracker_app.forms import TaskForm
@@ -41,7 +41,7 @@ class CreateTaskView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class UpdateTaskView(LoginRequiredMixin,UpdateView):
+class UpdateTaskView(LoginRequiredMixin, UpdateView):
     model = Task
     template_name = 'task/update_task.html'
     form_class = TaskForm
@@ -56,7 +56,7 @@ class UpdateTaskView(LoginRequiredMixin,UpdateView):
         return reverse('detail_project', kwargs={'pk': self.object.project.pk})
 
 
-class DeleteTaskView(LoginRequiredMixin,ManagerOrLeadRequiredMixin, DeleteView):
+class DeleteTaskView(LoginRequiredMixin, ManagerOrLeadRequiredMixin, DeleteView):
     template_name = 'task/delete_task.html'
     model = Task
     success_url = reverse_lazy('list_project')
