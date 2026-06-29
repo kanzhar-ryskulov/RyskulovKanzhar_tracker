@@ -325,7 +325,7 @@
         "description": "for example :\r\nView -> CreateView\r\nView --> UpdateView\r\nView --> DetailView",
         "status": 1,
         "created_at": "2026-06-19T19:30:20.883Z",
-        "updated_at": "2026-06-19T19:51:48.262Z",
+        "updated_at": "2026-06-26T09:20:13.089Z",
         "project": 1,
         "type": [
             1
@@ -334,16 +334,16 @@
 },
 {
     "model": "tracker_app.task",
-    "pk": 24,
+    "pk": 34,
     "fields": {
-        "summary": "Надаело создавать задачи",
-        "description": "да да не шутка",
+        "summary": "qwert6yqwertyu",
+        "description": "qw qwe qwer",
         "status": 1,
-        "created_at": "2026-06-20T11:56:11.029Z",
-        "updated_at": "2026-06-20T11:56:11.029Z",
+        "created_at": "2026-06-29T10:59:47.949Z",
+        "updated_at": "2026-06-29T10:59:47.949Z",
         "project": 1,
         "type": [
-            3
+            1
         ]
     }
 },
@@ -375,7 +375,12 @@
         "start_date": "2026-01-01",
         "end_date": "2027-01-03",
         "title": "Softime corporation",
-        "description": "its new generations manager for all kind of time manages"
+        "description": "its new generations manager for all kind of time manages\r\nочень интересно",
+        "user": [
+            1,
+            12,
+            13
+        ]
     }
 },
 {
@@ -385,7 +390,8 @@
         "start_date": "2026-01-01",
         "end_date": null,
         "title": "Kibersico CO",
-        "description": "global intresting project based on true stories of people"
+        "description": "global intresting project based on true stories of people",
+        "user": []
     }
 },
 {
@@ -395,7 +401,8 @@
         "start_date": "2026-01-01",
         "end_date": "2026-02-15",
         "title": "Science-cryptocurrency",
-        "description": "dollar ancector brother in law"
+        "description": "dollar ancector brother in law",
+        "user": []
     }
 },
 {
@@ -405,17 +412,8 @@
         "start_date": "2026-01-30",
         "end_date": "2026-02-15",
         "title": "Новый проект 5",
-        "description": "оивыгфшмзаигфшмавг мавифошмззваыфгшфхм"
-    }
-},
-{
-    "model": "tracker_app.project",
-    "pk": 6,
-    "fields": {
-        "start_date": null,
-        "end_date": null,
-        "title": "Проект 6",
-        "description": "very sunny"
+        "description": "оивыгфшмзаигфшмавг мавифошмззваыфгшфхм",
+        "user": []
     }
 },
 {
@@ -425,7 +423,10 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 7",
-        "description": "very exited"
+        "description": "very exited",
+        "user": [
+            1
+        ]
     }
 },
 {
@@ -435,7 +436,8 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 8",
-        "description": "amazing"
+        "description": "amazing",
+        "user": []
     }
 },
 {
@@ -445,7 +447,8 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 9",
-        "description": "описание 9"
+        "description": "описание 9",
+        "user": []
     }
 },
 {
@@ -455,7 +458,8 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 10",
-        "description": "описание 10"
+        "description": "описание 10",
+        "user": []
     }
 },
 {
@@ -465,7 +469,8 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 11",
-        "description": "описание 11"
+        "description": "описание 11",
+        "user": []
     }
 },
 {
@@ -475,7 +480,8 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 12",
-        "description": "описание 12"
+        "description": "описание 12",
+        "user": []
     }
 },
 {
@@ -485,7 +491,8 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 13",
-        "description": "описание 13"
+        "description": "описание 13",
+        "user": []
     }
 },
 {
@@ -495,7 +502,8 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 14",
-        "description": "описание 14"
+        "description": "описание 14",
+        "user": []
     }
 },
 {
@@ -505,7 +513,8 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 15",
-        "description": "описание 15"
+        "description": "описание 15",
+        "user": []
     }
 },
 {
@@ -515,385 +524,99 @@
         "start_date": null,
         "end_date": null,
         "title": "Проект 16",
-        "description": "описание 16"
+        "description": "описание 16",
+        "user": []
     }
 },
 {
-    "model": "auth.permission",
-    "pk": 1,
-    "fields": {
-        "name": "Can add log entry",
-        "content_type": 1,
-        "codename": "add_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 2,
-    "fields": {
-        "name": "Can change log entry",
-        "content_type": 1,
-        "codename": "change_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 3,
-    "fields": {
-        "name": "Can delete log entry",
-        "content_type": 1,
-        "codename": "delete_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 4,
-    "fields": {
-        "name": "Can view log entry",
-        "content_type": 1,
-        "codename": "view_logentry"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 5,
-    "fields": {
-        "name": "Can add permission",
-        "content_type": 3,
-        "codename": "add_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 6,
-    "fields": {
-        "name": "Can change permission",
-        "content_type": 3,
-        "codename": "change_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 7,
-    "fields": {
-        "name": "Can delete permission",
-        "content_type": 3,
-        "codename": "delete_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 8,
-    "fields": {
-        "name": "Can view permission",
-        "content_type": 3,
-        "codename": "view_permission"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 9,
-    "fields": {
-        "name": "Can add group",
-        "content_type": 2,
-        "codename": "add_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 10,
-    "fields": {
-        "name": "Can change group",
-        "content_type": 2,
-        "codename": "change_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 11,
-    "fields": {
-        "name": "Can delete group",
-        "content_type": 2,
-        "codename": "delete_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 12,
-    "fields": {
-        "name": "Can view group",
-        "content_type": 2,
-        "codename": "view_group"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 13,
-    "fields": {
-        "name": "Can add user",
-        "content_type": 4,
-        "codename": "add_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 14,
-    "fields": {
-        "name": "Can change user",
-        "content_type": 4,
-        "codename": "change_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 15,
-    "fields": {
-        "name": "Can delete user",
-        "content_type": 4,
-        "codename": "delete_user"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 16,
-    "fields": {
-        "name": "Can view user",
-        "content_type": 4,
-        "codename": "view_user"
-    }
-},
-{
-    "model": "auth.permission",
+    "model": "tracker_app.project",
     "pk": 17,
     "fields": {
-        "name": "Can add content type",
-        "content_type": 5,
-        "codename": "add_contenttype"
+        "start_date": "2026-01-30",
+        "end_date": "2027-01-03",
+        "title": "Woutkins CO.I",
+        "description": "nothing to tell",
+        "user": [
+            1
+        ]
     }
 },
 {
-    "model": "auth.permission",
+    "model": "tracker_app.project",
     "pk": 18,
     "fields": {
-        "name": "Can change content type",
-        "content_type": 5,
-        "codename": "change_contenttype"
+        "start_date": "2026-01-30",
+        "end_date": "2027-01-03",
+        "title": "Woutkins CO.I",
+        "description": "nothing to tell",
+        "user": [
+            1
+        ]
     }
 },
 {
-    "model": "auth.permission",
+    "model": "tracker_app.project",
     "pk": 19,
     "fields": {
-        "name": "Can delete content type",
-        "content_type": 5,
-        "codename": "delete_contenttype"
+        "start_date": "2026-01-30",
+        "end_date": "2027-01-03",
+        "title": "asd",
+        "description": "asd",
+        "user": [
+            1
+        ]
     }
 },
 {
-    "model": "auth.permission",
+    "model": "tracker_app.project",
     "pk": 20,
     "fields": {
-        "name": "Can view content type",
-        "content_type": 5,
-        "codename": "view_contenttype"
+        "start_date": "2026-01-30",
+        "end_date": "2026-02-15",
+        "title": "qwerty",
+        "description": "qwerty",
+        "user": [
+            1
+        ]
     }
 },
 {
-    "model": "auth.permission",
+    "model": "tracker_app.project",
     "pk": 21,
     "fields": {
-        "name": "Can add session",
-        "content_type": 6,
-        "codename": "add_session"
+        "start_date": "2026-01-30",
+        "end_date": "2027-01-03",
+        "title": "ячсми",
+        "description": "йцу",
+        "user": [
+            1
+        ]
     }
 },
 {
-    "model": "auth.permission",
+    "model": "tracker_app.project",
     "pk": 22,
     "fields": {
-        "name": "Can change session",
-        "content_type": 6,
-        "codename": "change_session"
+        "start_date": "2026-01-30",
+        "end_date": "2027-01-03",
+        "title": "main",
+        "description": "description",
+        "user": [
+            1
+        ]
     }
 },
 {
-    "model": "auth.permission",
+    "model": "tracker_app.project",
     "pk": 23,
     "fields": {
-        "name": "Can delete session",
-        "content_type": 6,
-        "codename": "delete_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 24,
-    "fields": {
-        "name": "Can view session",
-        "content_type": 6,
-        "codename": "view_session"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 25,
-    "fields": {
-        "name": "Can add status",
-        "content_type": 7,
-        "codename": "add_status"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 26,
-    "fields": {
-        "name": "Can change status",
-        "content_type": 7,
-        "codename": "change_status"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 27,
-    "fields": {
-        "name": "Can delete status",
-        "content_type": 7,
-        "codename": "delete_status"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 28,
-    "fields": {
-        "name": "Can view status",
-        "content_type": 7,
-        "codename": "view_status"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 29,
-    "fields": {
-        "name": "Can add type",
-        "content_type": 9,
-        "codename": "add_type"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 30,
-    "fields": {
-        "name": "Can change type",
-        "content_type": 9,
-        "codename": "change_type"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 31,
-    "fields": {
-        "name": "Can delete type",
-        "content_type": 9,
-        "codename": "delete_type"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 32,
-    "fields": {
-        "name": "Can view type",
-        "content_type": 9,
-        "codename": "view_type"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 33,
-    "fields": {
-        "name": "Can add task",
-        "content_type": 8,
-        "codename": "add_task"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 34,
-    "fields": {
-        "name": "Can change task",
-        "content_type": 8,
-        "codename": "change_task"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 35,
-    "fields": {
-        "name": "Can delete task",
-        "content_type": 8,
-        "codename": "delete_task"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 36,
-    "fields": {
-        "name": "Can view task",
-        "content_type": 8,
-        "codename": "view_task"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 37,
-    "fields": {
-        "name": "Can add project",
-        "content_type": 10,
-        "codename": "add_project"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 38,
-    "fields": {
-        "name": "Can change project",
-        "content_type": 10,
-        "codename": "change_project"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 39,
-    "fields": {
-        "name": "Can delete project",
-        "content_type": 10,
-        "codename": "delete_project"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 40,
-    "fields": {
-        "name": "Can view project",
-        "content_type": 10,
-        "codename": "view_project"
-    }
-},
-{
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-        "password": "pbkdf2_sha256$1200000$z5freAI1dTQvhBytEN4X9z$z0JTQyg8sb9gd4hk+TubqVQfGi19LlL0Db+ud02q//k=",
-        "last_login": "2026-06-20T12:25:43.391Z",
-        "is_superuser": true,
-        "username": "admin",
-        "first_name": "",
-        "last_name": "",
-        "email": "",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2026-06-18T08:58:57.638Z",
-        "groups": [],
-        "user_permissions": []
+        "start_date": "2026-01-30",
+        "end_date": "2027-01-03",
+        "title": "project manager's project",
+        "description": "project to check",
+        "user": [
+            11
+        ]
     }
 }
 ]
